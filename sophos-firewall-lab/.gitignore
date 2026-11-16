@@ -1,0 +1,19 @@
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Sensitive / large lab files - never upload these
+*.vmdk
+*.vmx
+*.nvram
+*.ova
+*.ovf
+*.iso
+*.lck/
+*.log
+*.key
+*.pem
+*.pfx
+*backup*.tar
+*.cfg.bak
