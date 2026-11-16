@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 360" width="940" height="360" font-family="Arial, Helvetica, sans-serif">
+  <rect width="940" height="360" fill="#ffffff"/>
+  <text x="470" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2937">Sophos Firewall Lab Topology</text>
+
+  <rect x="10" y="50" width="650" height="270" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="25" y="75" font-size="13" fill="#475569">VMware Workstation on Windows 11 host (host Wi-Fi and routing unchanged)</text>
+
+  <!-- Client -->
+  <rect x="30" y="130" width="170" height="110" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="115" y="165" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">Windows 11</text>
+  <text x="115" y="185" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">Client VM</text>
+  <text x="115" y="210" text-anchor="middle" font-size="12" fill="#1e3a8a">DHCP client</text>
+  <text x="115" y="226" text-anchor="middle" font-size="12" fill="#1e3a8a">192.168.50.100-200</text>
+
+  <!-- VMnet2 -->
+  <line x1="200" y1="185" x2="340" y2="185" stroke="#334155" stroke-width="3"/>
+  <text x="270" y="172" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">VMnet2</text>
+  <text x="270" y="206" text-anchor="middle" font-size="12" fill="#334155">host-only</text>
+
+  <!-- Sophos -->
+  <rect x="340" y="95" width="220" height="180" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="450" y="125" text-anchor="middle" font-size="16" font-weight="bold" fill="#7f1d1d">Sophos Firewall</text>
+  <text x="450" y="144" text-anchor="middle" font-size="12" fill="#7f1d1d">SFOS 22.0.3 MR-3</text>
+  <text x="450" y="178" text-anchor="middle" font-size="12" fill="#7f1d1d">Firewall rules</text>
+  <text x="450" y="196" text-anchor="middle" font-size="12" fill="#7f1d1d">NAT (masquerade)</text>
+  <text x="450" y="214" text-anchor="middle" font-size="12" fill="#7f1d1d">DHCP and DNS</text>
+  <text x="352" y="250" font-size="12" font-weight="bold" fill="#7f1d1d">Port1 LAN</text>
+  <text x="352" y="266" font-size="11" fill="#7f1d1d">192.168.50.2/24</text>
+  <text x="548" y="250" text-anchor="end" font-size="12" font-weight="bold" fill="#7f1d1d">Port2 WAN</text>
+  <text x="548" y="266" text-anchor="end" font-size="11" fill="#7f1d1d">DHCP 192.168.118.x</text>
+
+  <!-- VMnet8 -->
+  <line x1="560" y1="185" x2="720" y2="185" stroke="#334155" stroke-width="3"/>
+  <text x="640" y="172" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">VMnet8 (NAT)</text>
+  <text x="640" y="206" text-anchor="middle" font-size="12" fill="#334155">gateway 192.168.118.2</text>
+
+  <!-- Internet -->
+  <rect x="720" y="130" width="190" height="110" rx="40" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="815" y="192" text-anchor="middle" font-size="18" font-weight="bold" fill="#14532d">Internet</text>
+
+  <text x="470" y="345" text-anchor="middle" font-size="12" fill="#475569">Traffic path: Client, Port1, firewall rule, NAT, Port2, VMnet8, Internet</text>
+</svg>
