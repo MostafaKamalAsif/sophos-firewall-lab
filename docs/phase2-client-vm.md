@@ -11,5 +11,9 @@ Add a client machine that behaves like an employee computer behind the firewall.
 ## Result
 The client can reach the firewall LAN interface.
 
+## What I learned
+- A client with an extra NAT adapter would bypass the firewall and make every test meaningless.
+- The default gateway tells the client where to send traffic that leaves its network.
+
 ## Screenshots
 `03-vmware-adapter-vmnet2.png`, `04-client-ipconfig-ping.png`

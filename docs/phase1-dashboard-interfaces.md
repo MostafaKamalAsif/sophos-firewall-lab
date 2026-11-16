@@ -16,9 +16,11 @@ Understand the Sophos Control Center and confirm the interface configuration bef
 | Port2 | WAN | 192.168.118.130/24 | DHCP | Connected, 1000 Mbps Full Duplex |
 | GuestAP | WiFi | 10.255.0.1/24 | Static | Unplugged (default, not used in this lab) |
 
-## Notes
-- Firmware shown on the dashboard: SFOS 22.0.3 MR-3.
+## What I learned
+- The dashboard shows health at a glance, but IP details live under Network > Interfaces.
 - The browser shows "Not secure" because the firewall uses a self-signed certificate.
+- Always verify the current state before changing a firewall.
+- The firmware on the dashboard (SFOS 22.0.3 MR-3) was newer than my notes, so I updated my documentation.
 
 ## Screenshots
 `01-control-center.png`, `02-interfaces.png`

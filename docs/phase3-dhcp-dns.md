@@ -19,10 +19,15 @@ Created a DHCP server on Port1:
 | Gateway | 192.168.50.2 |
 | DNS | 192.168.50.2 |
 
-The range starts at .100 to keep lower addresses free for static devices (servers, printers).
+The range starts at .100 to keep lower addresses free for static devices such as servers and printers.
 
 ## Result
 After switching the client to automatic settings, it received 192.168.50.100 with DNS 192.168.50.2.
+
+## What I learned
+- DHCP removes manual configuration, which does not scale beyond a few computers.
+- Keeping a static range outside the DHCP pool avoids address conflicts.
+- Handing out the firewall as DNS lets Sophos resolve names for clients.
 
 ## Screenshots
 `05-dhcp-server-lan.png`, `06-client-dhcp-ipconfig-all.png`

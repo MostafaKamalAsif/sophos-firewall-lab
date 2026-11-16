@@ -11,7 +11,7 @@ Understand which rules give clients internet access, then create and test a cust
 | 2 | #Default_Network_Policy | LAN to WAN, any service | Accept |
 | 3 | Drop all | Any to Any | Drop |
 
-Rules are matched from top to bottom. Traffic that matches nothing is dropped by the last rule (default deny).
+Rules are matched from top to bottom. Traffic that matches nothing is dropped by the last rule (default deny). Rule 2 showed hundreds of megabytes of traffic, while Drop all showed none.
 
 ## NAT
 `#NAT_Default_Network_Policy` (linked to firewall rule 2) masquerades client traffic behind the WAN IP. It showed hundreds of hits after the client started browsing.
@@ -40,6 +40,12 @@ The rule must sit above the default LAN to WAN accept rule, otherwise traffic is
 | Browsing and DNS | Work |
 
 The Drop entry was confirmed in the firewall log.
+
+## What I learned
+- Rule order decides the outcome: first match wins.
+- Choosing the right service (ICMP only) avoids cutting off all of a client's access.
+- Drop silently discards packets, which is why the ping timed out instead of showing an error.
+- Logging lets me prove that a rule did what I intended.
 
 ## Screenshots
 `10-firewall-rules.png`, `11-nat-rules.png`, `12-system-services.png`, `13-custom-rule-icmp.png`, `14-ping-blocked.png`, `15-firewall-log-drop.png`
